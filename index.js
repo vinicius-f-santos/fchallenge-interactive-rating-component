@@ -1,18 +1,18 @@
 const buttons = document.querySelectorAll(".button");
 const submit = document.querySelector(".submit");
 const component = document.querySelector(".component");
-const rating = document.querySelector(".rating");
-let select = document.querySelector(".show-rating");
+const rating = document.querySelector(".finish-rating");
+const select = document.querySelector(".show-rating");
 let value;
 
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function() {
+buttons.forEach(button => {
+    button.addEventListener("click", function () {
         removeClass(buttons, submit);
         this.classList.add("active");
         submit.classList.add("active");
-        value = buttons[i].textContent;
+        value = button.textContent;
     })
-}
+});
 
 submit.addEventListener("click", function() {
     if (submit.classList.contains("active")) {
@@ -22,9 +22,9 @@ submit.addEventListener("click", function() {
     }
 })
 
-function removeClass(button, submit) {
+function removeClass(buttons, submit) {
     submit.classList.remove("active");
-    for (let i = 0; i < button.length; i++) {
-        button[i].classList.remove("active");
-    }
+    buttons.forEach(button => {
+        button.classList.remove("active");
+    })    
 }
