@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll(".button");
+const buttons = document.querySelectorAll(".rating");
 const submit = document.querySelector(".submit");
 const component = document.querySelector(".component");
 const rating = document.querySelector(".finish-rating");
@@ -14,6 +14,7 @@ buttons.forEach(button => {
     })
 });
 
+
 submit.addEventListener("click", function() {
     if (submit.classList.contains("active")) {
         component.style.display = "none";
@@ -26,5 +27,5 @@ function removeClass(buttons, submit) {
     submit.classList.remove("active");
     buttons.forEach(button => {
         button.classList.remove("active");
-    })    
+    })   
 }

@@ -42,7 +42,6 @@ p {
 }
 
 .component {
-    display: none;
     background-color: var(--grey950);
     width: 24rem;
     padding: 1.5rem;
